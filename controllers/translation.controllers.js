@@ -48,6 +48,8 @@ const getTranslation = asyncHandler(async (req, res) => {
 
 const addTranslation = asyncHandler(async (req, res) => {
 
+    console.log("Add Translation Called")
+
     const { translatorId, translatorName, verse_key, content } = req.body;
     const user = req.user;
 
