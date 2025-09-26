@@ -5,7 +5,8 @@ export const passwordPattern = /^.{8,}$/; // atleast 8 characters long
 
 export const cookieOptions = {
     httpOnly: true,
-    secure: true
+    secure: true,
+    sameSite: 'None'
 };
 
 
