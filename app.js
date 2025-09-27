@@ -5,12 +5,12 @@ import cookieParser from "cookie-parser";
 const app = express();
 
 app.use((req, res, next) => {
-    const allowed = ['https://scriptures-react-project.vercel.app'];
-    const origin = req.headers.origin;
-    console.log("Origin:", origin);
-    if (allowed.includes(origin)) {
-        res.setHeader('Access-Control-Allow-Origin', origin);
-    }
+    // const allowed = ['https://scriptures-react-project.vercel.app'];
+    // const origin = req.headers.origin;
+    // console.log("Origin:", origin);
+    // if (allowed.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', 'https://scriptures-react-project.vercel.app');
+    // }
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE,OPTIONS');
     res.setHeader('Access-Control-Allow-Credentials', 'true');
