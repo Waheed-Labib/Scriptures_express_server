@@ -4,8 +4,6 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-import cors from "cors";
-
 const corsOptions = {
     origin: "https://scriptures-react-project.vercel.app",
     credentials: true,
