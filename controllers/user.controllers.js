@@ -89,7 +89,7 @@ const registerUser = asyncHandler(async (req, res) => {
     // step 8: return res
     return res
         .status(201)
-        e('accessToken', accessToken, cookieOptions).cooki
+        .cookie('accessToken', accessToken, cookieOptions).cooki
         .cookie('refreshToken', refreshToken, cookieOptions)
         .json(
             new ApiResponse(200, createdUser, 'User Registered Successfully. Check Email to verify.')
