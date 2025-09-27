@@ -4,31 +4,14 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 
-const allowed = ['https://scriptures-react-project.vercel.app'];
-app.use((req, res, next) => {
-    const origin = req.headers.origin;
-    console.log('Request Origin:', origin);
-    if (allowed.includes(origin)) {
-        res.setHeader('Access-Control-Allow-Origin', origin);
-    }
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    );
-    res.setHeader(
-        'Access-Control-Allow-Methods',
-        'GET,POST,PATCH,DELETE,OPTIONS'
-    );
-    res.setHeader('Access-Control-Allow-Credentials', 'true');
+import cors from "cors";
 
-    // Handle preflight requests quickly
-    if (req.method === 'OPTIONS') {
-        return res.sendStatus(200);
-    }
-
-    next();
-});
-
+const corsOptions = {
+    origin: "https://scriptures-react-project.vercel.app",
+    credentials: true,
+    methods: ["GET", "POST", "PATCH", "DELETE"],
+};
+app.use(cors(corsOptions));
 
 
 app.use(express.json({ limit: '16kb' }));
