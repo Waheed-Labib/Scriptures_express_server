@@ -5,9 +5,10 @@ const app = express();
 
 // Set middleware of CORS 
 app.use((req, res, next) => {
+
     res.setHeader(
         "Access-Control-Allow-Origin",
-        "https://scriptures-react-project.vercel.app/"
+        "https://scriptures-react-project.vercel.app"
     );
     res.setHeader(
         "Access-Control-Allow-Methods",
