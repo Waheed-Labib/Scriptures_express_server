@@ -7,6 +7,7 @@ const app = express();
 const allowed = ['https://scriptures-react-project.vercel.app'];
 app.use((req, res, next) => {
     const origin = req.headers.origin;
+    console.log('Request Origin:', origin);
     if (allowed.includes(origin)) {
         res.setHeader('Access-Control-Allow-Origin', origin);
     }
