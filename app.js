@@ -7,7 +7,7 @@ const app = express();
 const corsOptions = {
     origin: "https://scriptures-react-project.vercel.app",
     credentials: true,
-    methods: ["GET", "POST", "PATCH", "DELETE"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 };
 app.use(cors(corsOptions));
 
