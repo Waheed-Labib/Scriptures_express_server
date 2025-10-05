@@ -6,7 +6,9 @@ const app = express();
 // Set middleware of CORS 
 app.use((req, res, next) => {
 
-    console.log('inside cors');
+    if (req.method === "OPTIONS") {
+        return res.sendStatus(200);
+    }
 
     res.setHeader(
         "Access-Control-Allow-Origin",
